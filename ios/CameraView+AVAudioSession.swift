@@ -87,7 +87,7 @@ extension CameraView {
     ReactLogger.log(level: .info, message: "Activating Audio Session...")
 
     do {
-      try AVAudioSession.sharedInstance().updateCategory(AVAudioSession.Category.playAndRecord,
+        try AVAudioSession.sharedInstance().updateCategory(AVAudioSessionCategoryPlayAndRecord as AVAudioSession.Category,
                                                          options: [.mixWithOthers,
                                                                    .allowBluetoothA2DP,
                                                                    .defaultToSpeaker,

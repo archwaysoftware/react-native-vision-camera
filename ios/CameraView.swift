@@ -144,11 +144,11 @@ public final class CameraView: UIView {
                                            object: audioCaptureSession)
     NotificationCenter.default.addObserver(self,
                                            selector: #selector(audioSessionInterrupted),
-                                           name: AVAudioSession.interruptionNotification,
+                                           name: NSNotification.Name.AVAudioSessionInterruption,
                                            object: AVAudioSession.sharedInstance)
     NotificationCenter.default.addObserver(self,
                                            selector: #selector(onOrientationChanged),
-                                           name: UIDevice.orientationDidChangeNotification,
+                                           name: NSNotification.Name.UIDeviceOrientationDidChange,
                                            object: nil)
   }
 
@@ -165,10 +165,10 @@ public final class CameraView: UIView {
                                               name: .AVCaptureSessionRuntimeError,
                                               object: audioCaptureSession)
     NotificationCenter.default.removeObserver(self,
-                                              name: AVAudioSession.interruptionNotification,
+                                              name: NSNotification.Name.AVAudioSessionInterruption,
                                               object: AVAudioSession.sharedInstance)
     NotificationCenter.default.removeObserver(self,
-                                              name: UIDevice.orientationDidChangeNotification,
+                                              name: NSNotification.Name.UIDeviceOrientationDidChange,
                                               object: nil)
   }
 

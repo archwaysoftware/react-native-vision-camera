@@ -168,12 +168,12 @@ extension CameraView {
           return
         }
 
-        let duration = CMTimeMake(value: 1, timescale: fps)
+          let duration = CMTimeMake(1, fps)
         device.activeVideoMinFrameDuration = duration
         device.activeVideoMaxFrameDuration = duration
       } else {
-        device.activeVideoMinFrameDuration = CMTime.invalid
-        device.activeVideoMaxFrameDuration = CMTime.invalid
+          device.activeVideoMinFrameDuration = kCMTimeInvalid
+        device.activeVideoMaxFrameDuration = kCMTimeInvalid
       }
       if hdr != nil {
         if hdr == true && !device.activeFormat.isVideoHDRSupported {

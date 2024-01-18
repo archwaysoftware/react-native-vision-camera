@@ -18,7 +18,7 @@ extension AVCaptureDevice.Format {
    */
   var videoDimensions: CGSize {
     return CMVideoFormatDescriptionGetPresentationDimensions(formatDescription,
-                                                             usePixelAspectRatio: true,
-                                                             useCleanAperture: true)
+                                                             true,
+                                                             true)
   }
 }
